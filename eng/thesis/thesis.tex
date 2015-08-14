@@ -1,0 +1,164 @@
+\documentclass[paper=a4,11pt,parskip=half,toc=listof]{scrartcl}
+\usepackage{scrpage2}
+\usepackage[utf8x]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\usepackage{nicefrac}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}  % NEU!
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{setspace}
+%\usepackage[firstpage]{draftwatermark}
+\usepackage{url}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{pdfpages}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[font=small]{caption} % sehr klein
+\usepackage{subcaption}
+\usepackage{picinpar}
+
+
+%opening
+\def\ThesisTitle{Performance estimation and optimization of the IEEE802.11 MAC layer for long distance point-to-point links}
+\def\ThesisAuthor{Michael Rademacher}
+\def\ThesisLocation{Sankt Augustin}
+\def\ThesisType{Master}
+\def\ThesisPubDate{January 15,2014}
+\def\ThesisFirstSupervisor{Prof. Dr. Karl Jonas}
+\def\ThesisSecondSupervisor{Prof. Dr. Kerstin Uhde}
+\def\ThesisExternalSupervisor{Dr. Mathias Kretschmer}
+\def\ThesisExternalCompany{Fraunhofer-Institut fuer \\ Offene Kommunikationssysteme}
+\def\ThesisSubject{}
+
+\interfootnotelinepenalty=10000
+
+\usepackage{todonotes}
+\usepackage{pdfpages} % pdf Dokumente direkt einbindenw
+\usepackage{algorithmic} % pseudo-code
+\usepackage{blindtext}
+%\usepackage{slashbox}
+\usepackage[printonlyused]{acronym} 
+% neuer Tabellentyp centriert und feste breite
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand{\specialcell}[2][l]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+% Einstellen der Größe der Beschriftungen über Tabellen und Abbildungen
+%\usepackage[font=footnotesisze]{caption} % sehr klein
+\usepackage[]{acronym}
+
+
+% Schrift usw. einstellen
+% \usepackage{times} % times in text
+\usepackage{mathptmx} % times in math
+\usepackage{setspace} \onehalfspacing % 1.5 Zeilenabstand
+\usepackage[paper=a4paper]{geometry}
+\setlength{\parindent}{0pt} % Kein Einrücken !
+\setlength{\headheight}{1.1\baselineskip}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+\let\stdsection\section
+\renewcommand\section{\newpage\stdsection}
+
+
+%%%% Eigene Kopf und Fußzeile %%%%%%%%%%%%%%%%
+\usepackage{scrpage2}% Package laden
+\pagestyle{scrheadings}%  SCRPAGE2 Style aktivieren
+\clearscrheadfoot% lösche alle Kopf und Fußzeilen
+%\setheadwidth{textwithmarginpar}%für textbreite+rand
+\setheadwidth{text}% für textbreite+rand
+\automark{section}% Autoerkenneung Chapter
+\ohead{\textbf{\pagemark}}%Seitenzahl
+\renewcommand{\sectionmark}[1]{\markright{\ #1}} %löscht die Nummerierung von Chapter
+\ihead{\textbf{\rightmark}}
+%%%%%%%%%% Striche Kopfzeile %%%%%%%%%%%%%
+\setheadsepline{0.5pt}
+
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+
+\usepackage{hyperref}
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={\ThesisTitle},    % title
+    pdfauthor={\ThesisAuthor},     % author
+    pdfsubject={\ThesisTitle},   % subject of the document
+    pdfcreator={\ThesisAuthor},   % creator of the document
+    pdfproducer={\ThesisAuthor}, % producer of the document
+    pdfkeywords={802.11} {DCF} {long-distance} {modeling}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%% Startseite %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{titlepage}
+\newgeometry{top=4cm, bottom=3cm, left=4.5cm, right=3cm}
+
+\include{chapter/erklaerung}
+\pagenumbering{Roman} % Große römische Seitenzahlen,
+\addtocontents{toc}{\protect\markright{}}
+
+\begin{spacing}{1.14} % set me to something nice when ready
+\tableofcontents
+\end{spacing}
+
+\newpage
+\listoftables % Tabellenverzeichnis
+\listoffigures % Abbildungsverzeichnis 
+\include{acronym} % Make an acronyn thing
+
+%\setcounter{page}{1}
+\newpage
+%%%%%%%%%%%%%%%%%%%%% Startseite %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{tocdepth}{4} 
+\setcounter{secnumdepth}{4}
+%\setcounter{tocdepth}{4}
+\pagenumbering{arabic} % Arabische Ziffern
+% Hier später einzeilne Kapitel eibinden aus dem Unterorndner
+\include{chapter/introduction} % Kapitel 
+%\printglossary
+\newpage
+% Festlegung Art der Zitierung - Havardmethode: Abkuerzung Autor + Jahr
+%\bibliographystyle{plainnat} % Autor und Jahr
+%\bibliographystyle{amsalpha} % Auto kurz und Jahr
+\bibliographystyle{alphaabbr} % Auto kurz und Jahr
+%\bibliographystyle{alpha} % Auto kurz und Jahr
+%\bibliographystyle{plain} % Nur nummeran
+%\bibliographystyle{unibonn_ay}
+\newpage
+\singlespacing % Literaturverzeichnis mit einfachem Zeilenabstand
+
+\bibliography{references}
+\appendix %Beginn des Anhangs
+
+%Additional thinks
+%\include{chapter/anhang}
+
+
+\end{document}
+ 
