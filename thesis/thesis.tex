@@ -1,6 +1,21 @@
 \documentclass[paper=a4,11pt,parskip=half,toc=listof]{scrartcl}
+\usepackage{etoolbox}
+
+% % % % % LANGUAGE % % % %
+\newtoggle{german} % Make your choic here
+%\togglefalse{german} % English
+\toggletrue{german} % German
+% % % % % \LANGUAGE % % % %
+
+\iftoggle{german}{
+\usepackage[ngerman]{babel} % Deutsche Sprachanpassungen
+\usepackage[T1]{fontenc}    % Silbentrennung bei Sonderzeichen
+\usepackage[utf8]{inputenc} % Direkte Angabe von Umlauten im Dokument.Wenn Sie an einem Mac sitzen,verwenden Sie ggf. „macce“ anstatt „utf8“.
+\usepackage[autostyle=true,german=quotes]{csquotes} % Anfuehrungszeichen\
+}{
+\usepackage[utf8x]{inputenc}}
+
 \usepackage{scrpage2}
-\usepackage[utf8x]{inputenc}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{textcomp}
@@ -33,7 +48,7 @@
 \def\ThesisAuthor{John Doe}
 \def\ThesisLocation{Sankt Augustin}
 \def\ThesisType{Master}
-\def\ThesisPubDate{January 15,2014} % Change here to the date you are going to print your thesis
+\def\ThesisPubDate{\today} % Change here to the date you are going to print your thesis
 \def\ThesisFirstSupervisor{Prof. Dr. Karl Jonas}
 \def\ThesisSecondSupervisor{Prof. Dr. Kerstin Uhde}
 \def\ThesisExternalSupervisor{Dr. Mathias Kretschmer}

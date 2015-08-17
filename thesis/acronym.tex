@@ -1,7 +1,15 @@
 \begin{acronym}[]
+\iftoggle{german}{
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+\sectionmark{Abkürzungsverzeichnis}
+}{
 \addcontentsline{toc}{section}{List of Abbreviations}
+\sectionmark{List of Abbreviations}
+}
+
+
 %\section*{List of abbreviations}
-\sectionmark{List of abbreviations}
+
 \setlength{\itemsep}{-\parsep}
 \acro{3GPP}{3rd Generation Partnership Project}
 \acro{AC}{Access Category}

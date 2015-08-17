@@ -27,6 +27,14 @@
 \begin{flushleft}
 % use packages: array
 \vfill
+\iftoggle{german}{%
+\begin{tabularx}{\textwidth}{lX}
+ Erstprüfer: & \ThesisFirstSupervisor \\
+ Zweitprüfer: & \ThesisSecondSupervisor \\
+ Betreuer: & \ThesisExternalSupervisor \\
+ Unternehmen ~ & \ThesisExternalCompany \\ % Comment out if not needed
+ Eingereicht am: & \ThesisPubDate % Comment out if not needed
+\end{tabularx}}{
 \begin{tabularx}{\textwidth}{lX}
  First supervisor: & \ThesisFirstSupervisor \\
  Second supervisor: & \ThesisSecondSupervisor \\
@@ -34,6 +42,11 @@
  External company ~ & \ThesisExternalCompany \\ % Comment out if not needed
  Handed in: & \ThesisPubDate % Comment out if not needed
 \end{tabularx}
+}
+
+
+
+
 \end{flushleft}
 \end{large}
 \end{titlepage}
