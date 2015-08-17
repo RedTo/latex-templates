@@ -8,13 +8,13 @@
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \usepackage{nicefrac}
 \usepackage{amsmath}
-\usepackage[T1]{fontenc}  % NEU!
+\usepackage[T1]{fontenc}
 \usepackage{cite}
 \usepackage{graphicx}
 \usepackage{longtable}
 \usepackage{float}
 \usepackage{setspace}
-%\usepackage[firstpage]{draftwatermark}
+%\usepackage[firstpage]{draftwatermark} % comment in if you submit a draf. 
 \usepackage{url}
 \usepackage{tabularx}
 \usepackage{makecell}
@@ -23,38 +23,40 @@
 \usepackage{pdfpages}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage[font=small]{caption} % sehr klein
+\usepackage[font=small]{caption} % very thin
 \usepackage{subcaption}
 \usepackage{picinpar}
 
+% No footnotes on the next page please
+\interfootnotelinepenalty=10000
 
 %opening
-\def\ThesisTitle{Performance estimation and optimization of the IEEE802.11 MAC layer for long distance point-to-point links}
-\def\ThesisAuthor{Michael Rademacher}
+\def\ThesisTitle{Here Comes the title}
+\def\ThesisAuthor{Here is the author}
 \def\ThesisLocation{Sankt Augustin}
 \def\ThesisType{Master}
-\def\ThesisPubDate{January 15,2014}
+\def\ThesisPubDate{January 15,2014} % Change here to the date you are going to print your thesis
 \def\ThesisFirstSupervisor{Prof. Dr. Karl Jonas}
 \def\ThesisSecondSupervisor{Prof. Dr. Kerstin Uhde}
 \def\ThesisExternalSupervisor{Dr. Mathias Kretschmer}
-\def\ThesisExternalCompany{Fraunhofer-Institut fuer \\ Offene Kommunikationssysteme}
+\def\ThesisExternalCompany{Fraunhofer FOKUS}
 \def\ThesisSubject{}
 
-\interfootnotelinepenalty=10000
+
 
 \usepackage{todonotes}
-\usepackage{pdfpages} % pdf Dokumente direkt einbindenw
+\usepackage{pdfpages} % directly include pdf pages
 \usepackage{algorithmic} % pseudo-code
 \usepackage{blindtext}
-%\usepackage{slashbox}
-\usepackage[printonlyused]{acronym} 
-% neuer Tabellentyp centriert und feste breite
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 
+
+\usepackage[printonlyused]{acronym} 
+% new types for a table
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcommand{\specialcell}[2][l]{%
   \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
-% Einstellen der Größe der Beschriftungen über Tabellen und Abbildungen
-%\usepackage[font=footnotesisze]{caption} % sehr klein
+  
+  
 \usepackage[]{acronym}
 
 
@@ -155,9 +157,8 @@
 
 \bibliography{references}
 \appendix %Beginn des Anhangs
-
-%Additional thinks
-%\include{chapter/anhang}
+% The appendix is a chapter
+\include{chapter/appendix}
 
 
 \end{document}

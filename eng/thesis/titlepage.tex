@@ -2,27 +2,18 @@
 \begin{minipage}[t]{0.5\textwidth}
 \begin{Large}
     \begin{flushleft}
-      \makebox[11cm][c]{
-      \parbox[c]{3.0cm}{\includegraphics[height=5ex]{./logos/fhlogo} \vspace{2.8cm}}
-      \parbox[c]{7.0cm}{\begin{flushleft}
-      \small{\textbf{Hochschule\linebreak{}Bonn-Rhein-Sieg}\linebreak{}\textit{University of Applied Sciences}\linebreak{}\linebreak{}\textbf{Fachbereich Informatik}\linebreak{}\textit{Department of Computer Science}}
-      \end{flushleft}}}
+      \hspace{1cm} \makebox[3cm][c]{\includegraphics[height=8ex]{./logos/logo_hbrs.png} \vspace{1.8cm}}
     \end{flushleft}
 \end{Large}
 \end{minipage}
-% Can be an external company!
 %\begin{minipage}[t]{0.5\textwidth}
+% Can be an external company! Play with thge vspaces to look nice.
 %\begin{Large}
 %    \begin{flushright}
-%      \makebox[11cm][c]{
-%      \parbox[c]{3.0cm}{\includegraphics[height=14.5ex]{./logos/network_research.eps}\vspace{1.40cm}}
-%      \parbox[c]{7.0cm}{\begin{flushleft}
-%      %\small{\textbf{\linebreak{}}\linebreak{}\textit{}\linebreak{}\linebreak{}\textbf{NET}\linebreak{}\textit{Network Research}}
-%      \end{flushleft}}}
+%     \makebox[3cm][c]{\includegraphics[height=8ex]{./logos/logo_hbrs.png} \vspace{1.8cm}} \hspace{1cm}
 %    \end{flushright}
 %\end{Large}
-%\end{minipage}%
-
+%\end{minipage}
 \vspace{0.07\textheight}
 \begin{center}
  \begin{Huge} \begin{spacing}{1.3} \textbf{\ThesisTitle} \end{spacing} \end{Huge}
@@ -36,14 +27,13 @@
 \begin{flushleft}
 % use packages: array
 \vfill
-\begin{tabular}{ll}
+\begin{tabularx}{\textwidth}{lX}
  First supervisor: & \ThesisFirstSupervisor \\
  Second supervisor: & \ThesisSecondSupervisor \\
- %External supervisor: & \ThesisExternalSupervisor \\
- %~ & \ThesisExternalCompany \\
- %~ & \\
-Handed in: & \ThesisPubDate
-\end{tabular}
+ External supervisor: & \ThesisExternalSupervisor \\
+ External company ~ & \ThesisExternalCompany \\ % Comment out if not needed
+ Handed in: & \ThesisPubDate % Comment out if not needed
+\end{tabularx}
 \end{flushleft}
 \end{large}
 \end{titlepage}
