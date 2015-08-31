@@ -1,0 +1,75 @@
+\begin{titlepage}
+\begin{minipage}[t]{0.5\textwidth}
+\begin{Large}
+    \begin{flushleft}
+      \hspace{1cm} \makebox[3cm][c]{\includegraphics[height=8ex]{./logos/logo_hbrs.png} \vspace{1.8cm}}
+    \end{flushleft}
+\end{Large}
+\end{minipage}
+%\begin{minipage}[t]{0.5\textwidth}
+% Can be an external company! Play with thge vspaces to look nice.
+%\begin{Large}
+%    \begin{flushright}
+%     \makebox[3cm][c]{\includegraphics[height=8ex]{./logos/logo_hbrs.png} \vspace{1.8cm}} \hspace{1cm}
+%    \end{flushright}
+%\end{Large}
+%\end{minipage}
+\vspace{0.07\textheight}
+\iftoggle{german}{%
+\begin{center}
+\begin{Huge}
+\textbf{Exposé}\\
+\end{Huge}
+\vspace{0.07\textheight}
+\begin{Large}
+im Studiengang \\
+\CourseType \\
+\end{Large}
+\end{center}
+}{
+\begin{center}
+\begin{Huge}
+\textbf{Proposal} \\
+\vspace{0.07\textheight}
+\begin{Large}
+\CourseType \\
+\end{Large}
+\end{Huge}
+\end{center}
+}
+\vspace{0.03\textheight}
+\begin{center}
+ \begin{Huge} \begin{spacing}{1.3} \textbf{\ThesisTitle} \end{spacing} \end{Huge}
+ \vspace{2em}
+ \begin{Large}\textbf{by} \end{Large}\\
+ \vspace{2em}
+ \begin{Large}\textbf{\ThesisAuthor}\end{Large}\\
+\end{center}
+%\vspace{0.100\textheight}
+\begin{large}
+\begin{flushleft}
+% use packages: array
+\vfill
+\iftoggle{german}{%
+\begin{tabularx}{\textwidth}{lX}
+ Erstprüfer: & \ThesisFirstSupervisor \\
+ Zweitprüfer: & \ThesisSecondSupervisor \\
+ Betreuer: & \ThesisExternalSupervisor \\
+ Unternehmen ~ & \ThesisExternalCompany \\ % Comment out if not needed
+ Eingereicht am: & \ThesisPubDate % Comment out if not needed
+\end{tabularx}}{
+\begin{tabularx}{\textwidth}{lX}
+ First supervisor: & \ThesisFirstSupervisor \\
+ Second supervisor: & \ThesisSecondSupervisor \\
+ External supervisor: & \ThesisExternalSupervisor \\
+ External company ~ & \ThesisExternalCompany \\ % Comment out if not needed
+ Handed in: & \ThesisPubDate % Comment out if not needed
+\end{tabularx}
+}
+
+
+
+
+\end{flushleft}
+\end{large}
+\end{titlepage}
