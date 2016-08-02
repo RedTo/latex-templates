@@ -107,7 +107,13 @@
 
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
-
+%% Prevent "underfull \hbox" warnings in bibliography,
+%% use only when needed. There are two possibilities:
+% 1.align text left:
+%\usepackage{ragged2e}
+%\apptocmd{\thebibliography}{\RaggedRight}{}{}
+% 2. relax the restrictions (may break something):
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 
 
 \usepackage[bookmarks=true]{hyperref}
