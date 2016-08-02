@@ -7,13 +7,16 @@
 \toggletrue{german} % German
 % % % % % \LANGUAGE % % % %
 
+\usepackage[utf8]{inputenc} % input files werden als utf8 interpretiert
+\usepackage[T1]{fontenc} % die schriftart wird mit T1 codiert (will man haben)
+
 \iftoggle{german}{
 \usepackage[ngerman]{babel} % Deutsche Sprachanpassungen
-\usepackage[T1]{fontenc}    % Silbentrennung bei Sonderzeichen
-\usepackage[utf8]{inputenc} % Direkte Angabe von Umlauten im Dokument.Wenn Sie an einem Mac sitzen,verwenden Sie ggf. „macce“ anstatt „utf8“.
-\usepackage[autostyle=true,german=quotes]{csquotes} % Anfuehrungszeichen\
+\usepackage[german=quotes]{csquotes} % Anfuehrungszeichen
 }{
-\usepackage[utf8x]{inputenc}}
+\usepackage[english]{babel} % Deutsche Sprachanpassungen
+\usepackage[english=american]{csquotes} % Anfuehrungszeichen
+}
 
 \usepackage{scrpage2}
 \usepackage{listings}
@@ -27,7 +30,6 @@
 \usepackage{mathtools}
 \usepackage{nicefrac}
 \usepackage{amsmath}
-\usepackage[T1]{fontenc}
 \usepackage{cite}
 \usepackage{graphicx}
 \usepackage{longtable}
@@ -88,11 +90,6 @@
 \setcounter{secnumdepth}{4}
 %%%% Font %%%%
 
-
-\let\stdsection\section
-\renewcommand\section{\newpage\stdsection} %newpage after each section
-
-
 %%%% footer and header %%%%
 \usepackage{scrpage2}%
 \pagestyle{scrheadings}%  S
@@ -110,9 +107,8 @@
 
 
 
-\usepackage{hyperref}
+\usepackage[bookmarks=true]{hyperref}
 \hypersetup{
-    bookmarks=true,         % show bookmarks bar?
     unicode=false,          % non-Latin characters in Acrobat’s bookmarks
     pdftoolbar=true,        % show Acrobat’s toolbar?
     pdfmenubar=true,        % show Acrobat’s menu?
@@ -139,20 +135,22 @@
 \newgeometry{top=4cm, bottom=3cm, left=4.5cm, right=3cm}
 
 \include{chapter/erklaerung}
-\pagenumbering{Roman} % Big roman numbers
+\pagenumbering{Roman} % Big roman numbers until the text begins
 \addtocontents{toc}{\protect\markright{}}
 
+\setcounter{page}{3} % inhaltsverzeichnis beginnt auf seite 3
 \begin{spacing}{1.14} % set me to something nice when ready
 \tableofcontents
 \end{spacing}
 
-\newpage
+\clearpage{}
 \listoftables % add list of tables
+\clearpage{}
 \listoffigures % add list of figures 
+\clearpage{}
 \include{acronym} % include the acronym thing
+\clearpage{}
 
-%\setcounter{page}{1}
-\newpage
 %%%%%%%%%%%%%%%%%%%%% Startseite %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{tocdepth}{4} 
 \setcounter{secnumdepth}{4}
@@ -162,7 +160,6 @@
 % Here the chapters are included
 \include{chapter/introduction} % introduction  
 
-\newpage
 % choose your type of citation here
 %\bibliographystyle{plainnat} % author and year
 %\bibliographystyle{amsalpha} % author and year short
@@ -170,9 +167,8 @@
 %\bibliographystyle{alpha} % author and year
 %\bibliographystyle{plain} % only numbers
 %\bibliographystyle{unibonn_ay} % a special file used for the uni bonn
-
-\newpage
-\singlespacing % bibliography with single spacing 
+\singlespacing % bibliography with single spacing
+% \nocite{*} % print all references in bib file regardless of citing
 \bibliography{references}
 
 % Start of the appendix
