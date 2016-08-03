@@ -1,16 +1,17 @@
-\begin{acronym}[]
 \iftoggle{german}{
-\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
-\sectionmark{Abkürzungsverzeichnis}
+\def\AbbrvName{Abkürzungsverzeichnis}
 }{
-\addcontentsline{toc}{section}{List of Abbreviations}
-\sectionmark{List of Abbreviations}
+\def\AbbrvName{List of Abbreviations}
 }
+\section*{\AbbrvName}
+\addcontentsline{toc}{section}{\AbbrvName}
+\sectionmark{\AbbrvName}
 
+\def\LongestAcro{wmSDN}
 
-%\section*{List of abbreviations}
+\begin{acronym}[\LongestAcro] % Pass the longest acronym here to align them correctly
+\setlength{\itemsep}{-\parsep} % reduce the space between acronyms
 
-\setlength{\itemsep}{-\parsep}
 \acro{3GPP}{3rd Generation Partnership Project}
 \acro{AC}{Access Category}
 \acro{ACK}{acknowledgement}
