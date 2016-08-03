@@ -78,7 +78,11 @@
 \newcommand{\specialcell}[2][l]{%
   \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
   
-
+\iftoggle{german}{}{
+% Define date format
+\usepackage[us]{datetime}
+\newdateformat{germandate}{\THEDAY. \monthname[\THEMONTH] \THEYEAR}
+}
 
 
 %%%% Font %%%%
