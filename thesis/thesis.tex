@@ -31,12 +31,14 @@
 \usepackage{mathtools}
 \usepackage{nicefrac}
 \usepackage{amsmath}
-\usepackage{cite}
+%\usepackage{cite}
+\usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{longtable}
 \usepackage{float}
 \usepackage{setspace}
-\usepackage{url}
+%\usepackage{url}
+\PassOptionsToPackage{hyphens}{url} %line breaks in urls
 \usepackage{tabularx}
 \usepackage{makecell}
 \usepackage{multirow}
@@ -45,8 +47,12 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[font=small]{caption} % very thin
-\usepackage{subcaption}
-\usepackage{picinpar}
+\DeclareCaptionType{captionedEquation}[][]
+\captionsetup[captionedEquation]{labelformat=empty}
+%\usepackage{subcaption}
+%\usepackage{picinpar}
+\usepackage{tabu}
+\usepackage{subfigure} %subfigure / plot images next to each other
 
 % No footnotes on the next page please
 \interfootnotelinepenalty=10000
@@ -85,6 +91,9 @@
 \newdateformat{germandate}{\THEDAY. \monthname[\THEMONTH] \THEYEAR}
 }
 
+%%%% NEW COMMANDS %%%%%
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+\newcommand{\subsubsubsubsection}[1]{\textbf{#1}\mbox{}\\}
 
 %%%% Font %%%%
 % \usepackage{times} % times in text
@@ -175,9 +184,9 @@
 \include{chapter/introduction} % introduction  
 
 % choose your type of citation here
-%\bibliographystyle{plainnat} % author and year
+\bibliographystyle{plainnat} % author and year
 %\bibliographystyle{amsalpha} % author and year short
-\bibliographystyle{alphaabbr} % author short and year
+%\bibliographystyle{alphaabbr} % author short and year
 %\bibliographystyle{alpha} % author and year
 %\bibliographystyle{plain} % only numbers
 %\bibliographystyle{unibonn_ay} % a special file used for the uni bonn

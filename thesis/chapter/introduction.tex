@@ -30,21 +30,14 @@ Here is a cool table \ref{tab:soa-edca} you can reference it in the text.
 Here is a cool figure. It is even a subfigure.
 
 \begin{figure}[h!]
-\centering
-\begin{subfigure}{.4\textwidth}
-  \centering
-    \includegraphics[width=1.1\textwidth]{figures/dcf-basic-access.png}
-    \caption[Basic access]{Basic access \cite[p. 838]{ieee-802.11-2012}}
-    \label{fig:dcf-basic-access}
-\end{subfigure}%
-\begin{subfigure}{0.6\textwidth}
-  \centering
-  \includegraphics[width=1.1\textwidth]{figures/dcf-backoff.png}
-  \caption[Back-off procedure]{Back-off procedure \cite[p. 839]{ieee-802.11-2012}}
-  \label{fig:dcf-back-off}
-\end{subfigure}
-\caption{\acf{DCF}}
+	\centering
+	\subfigure[Basic access \citep{ieee-802.11-2012}]{\includegraphics[width=0.39\textwidth]{figures/dcf-basic-access.png}}
+	\subfigure[Back-off procedure \citep{ieee-802.11-2012}]{\includegraphics[width=0.59\textwidth]{figures/dcf-backoff.png}}
+	\caption{\acf{DCF}}
+	\label{fig:lime-sample}
 \end{figure}
+
+Um eine Seite zu zitieren: $\backslash$citep[p. 838]\{ieee-802.11-2012\} $\Rightarrow$ \citep[p. 838]{ieee-802.11-2012}
 
 % One paragrah for one idea!
 \blindtext
