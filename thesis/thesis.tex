@@ -1,4 +1,4 @@
-\documentclass[paper=a4,11pt,parskip=half,toc=listof]{scrartcl}
+\documentclass[paper=a4,12pt,parskip=half,toc=listof,numbers=noendperiod, twoside]{scrartcl}
 
 % % % % % LANGUAGE % % % %
 \usepackage{etoolbox} % Allow advanced, programming-like commands like \newtoggle
@@ -18,7 +18,7 @@
 \usepackage[english=american]{csquotes} % Anfuehrungszeichen
 }
 
-\usepackage{scrpage2}
+%\usepackage{scrpage2}
 \usepackage{listings}
 \lstset{
   breaklines=true,
@@ -110,15 +110,27 @@
 %%%% Font %%%%
 
 %%%% footer and header %%%%
-\usepackage{scrpage2}%
-\pagestyle{scrheadings}%  S
-\clearscrheadfoot% 
+\usepackage{scrlayer-scrpage}% sets pagestyle scrheadings automatically
+\clearpairofpagestyles%
+\clearscrheadfoot%
 \setheadwidth{text}%
-\automark{section}% 
-\ohead{\textbf{\pagemark}}
-\renewcommand{\sectionmark}[1]{\markright{\ #1}} 
-\ihead{\textbf{\rightmark}}
+\automark[section]{section}%
+\automark*[subsection]{subsection}%
+\rohead{\textbf{\pagemark}}
+\rehead{\textbf{\pagemark}}
+\lohead{\textbf{\leftmark}}
+\lehead{\textbf{\rightmark}}
 \setheadsepline{0.5pt}
+\setkomafont{pagehead}{\upshape}
+%\usepackage{scrpage2}%
+%\pagestyle{scrheadings}%  S
+%\clearscrheadfoot% 
+%\setheadwidth{text}%
+%\automark{section}% 
+%\ohead{\textbf{\pagemark}}
+%\renewcommand{\sectionmark}[1]{\markright{\ #1}} 
+%\ihead{\textbf{\rightmark}}
+%\setheadsepline{0.5pt}
 %%%% \footer and header %%%%
 
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
@@ -168,12 +180,12 @@
 \tableofcontents
 \end{spacing}
 
-\clearpage{}
-\listoftables % add list of tables
-\clearpage{}
-\listoffigures % add list of figures 
-\clearpage{}
-\include{acronym} % include the acronym thing
+%\clearpage{}
+%\listoftables % add list of tables
+%\clearpage{}
+%\listoffigures % add list of figures 
+%\clearpage{}
+%\include{acronym} % include the acronym thing
 \clearpage{}
 
 %%%%%%%%%%%%%%%%%%%%% Startseite %%%%%%%%%%%%%%%%%%%%%%%%%%%
